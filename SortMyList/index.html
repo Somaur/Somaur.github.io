@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优先级生成工具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #start, #compare {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>优先级生成工具</h1>
+    <label for="elements">请输入列表元素:</label>
+    <textarea id="elements" rows="10" cols="50" placeholder="元素1&#10;元素2&#10;元素3"></textarea>
+    <button id="start">开始</button>
+    <div id="comparison" style="display:none;">
+        <p id="question"></p>
+        <button id="optionA"></button>
+        <button id="optionB"></button>
+    </div>
+    <p id="report"></p>
+    <script src="script.js"></script>
+</body>
+</html>

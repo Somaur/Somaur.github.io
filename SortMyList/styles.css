@@ -1,0 +1,143 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.input-section, .output-section {
+    width: 20%;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-section textarea, .output-section textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    resize: none;
+    overflow: auto;
+    white-space: pre;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buttons button, .output-section button, .options button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comparison-section {
+    width: 400px;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#statusMessage {
+    margin-top: 20px;
+}
+
+.disabled {
+    background-color: #f0f0f0; /* 设置灰色背景 */
+    color: #a0a0a0; /* 设置灰色文字 */
+    cursor: not-allowed; /* 设置不可点击的鼠标样式 */
+}
+
+.disabled textarea, .disabled input, .disabled button {
+    pointer-events: none; /* 禁用鼠标事件 */
+    opacity: 0.6; /* 设置透明度使其看起来不可用 */
+}
+
+.disabled textarea, .disabled input {
+    background-color: #f0f0f0; /* 设置灰色背景 */
+    color: #a0a0a0; /* 设置灰色文字 */
+    border: 1px solid #ccc; /* 设置灰色边框 */
+}
+
+.disabled button {
+    background-color: #dcdcdc; /* 设置灰色背景 */
+    color: #a0a0a0; /* 设置灰色文字 */
+    border: 1px solid #ccc; /* 设置灰色边框 */
+}
+
+
+#toast {
+    visibility: hidden; /* 隐藏时不可见 */
+    min-width: 250px; /* 最小宽度 */
+    margin-left: -125px; /* 负的半宽以居中 */
+    background-color: #333; /* 背景颜色 */
+    color: #fff; /* 字体颜色 */
+    text-align: center; /* 文字居中 */
+    border-radius: 2px; /* 圆角 */
+    padding: 16px; /* 内间距 */
+    position: fixed; /* 固定位置 */
+    z-index: 1; /* 显示在最前面 */
+    left: 50%; /* 水平居中 */
+    bottom: 30px; /* 距离底部位置 */
+    font-size: 17px; /* 字体大小 */
+}
+
+#toast.show {
+    visibility: visible; /* 可见 */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s; /* 进入和退出动画 */
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
